@@ -1,0 +1,10 @@
+# Project exclude paths
+/order-service/order-application/target/
+/order-service/order-container/target/
+/order-service/order-dataaccess/target/
+/order-service/order-domains/order-application-service/target/
+/order-service/order-domains/order-domains-core/target/
+/order-service/order-domains/target/
+/order-service/order-messaging/target/
+/order-service/target/
+/target/

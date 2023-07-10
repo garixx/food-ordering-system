@@ -1,0 +1,17 @@
+Act as Java Developer rewrite the setOrderProductInformation to use hash map.
+
+Java code: """
+public class OrderDomainServiceImpl {
+
+    private void setOrderProductInformation(Order order, Restaurant restaurant) {
+        order.getItems().forEach(orderItem -> {
+            restaurant.getProducts().forEach(restaurantProduct -> {
+                Product currentProduct = orderItem.getProduct();
+                if (currentProduct.equals(restaurantProduct)) {
+                    currentProduct.updateWithConfirmedNameAndPrice(restaurantProduct.getName(), restaurantProduct.getPrice());
+                }
+            });
+        });
+    }
+}
+"""
