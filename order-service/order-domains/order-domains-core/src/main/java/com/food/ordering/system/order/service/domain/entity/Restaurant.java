@@ -28,6 +28,14 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         return new Builder();
     }
 
+    public static Builder builder(Restaurant copy) {
+        Builder builder = new Builder();
+        builder.restaurantId = copy.getId();
+        builder.products = copy.getProducts();
+        builder.active = copy.isActive();
+        return builder;
+    }
+
     public static final class Builder {
         private RestaurantId restaurantId;
         private List<Product> products;

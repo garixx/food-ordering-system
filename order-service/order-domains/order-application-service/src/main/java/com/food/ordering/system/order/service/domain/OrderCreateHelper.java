@@ -1,5 +1,6 @@
 package com.food.ordering.system.order.service.domain;
 
+import com.food.ordering.system.order.service.domain.OrderDomainService;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.ordering.system.order.service.domain.entity.Customer;
 import com.food.ordering.system.order.service.domain.entity.Order;
@@ -69,10 +70,10 @@ public class OrderCreateHelper {
     private Order saveOrder(Order order) {
         var result = orderRepository.save(order);
         if (result ==  null) {
-            log.error("could not save order with id: {}", order.getId());
+            log.error("could not save order with id: {}", order.getId().getValue());
             throw new OrderDomainException("Could not save an order");
         }
-        log.info("Order is saved with id: {}", result.getId());
+        log.info("Order is saved with id: {}", result.getId().getValue());
         return result;
     }
 }
