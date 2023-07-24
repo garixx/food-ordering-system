@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8083
 
 logging:
   level:
@@ -31,7 +31,7 @@ spring:
 kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
   schema-registry-url-key: schema.registry.url
-  schema-registry-url: http://localhost:8081
+  schema-registry-url: http://localhost:8083
   num-of-partitions: 3
   replication-factor: 3
 
@@ -47,8 +47,8 @@ kafka-producer-config:
   retry-count: 5
 
 kafka-consumer-config:
-  key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-  value-deserializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+  key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
   payment-consumer-group-id: payment-topic-consumer
   restaurant-approval-consumer-group-id: restaurant-approval-topic-consumer
   consumer-group-id: customer-topic-consumer

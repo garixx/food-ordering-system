@@ -7,6 +7,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 DROP TYPE IF EXISTS order_status;
 CREATE TYPE order_status AS ENUM('PENDING', 'PAID', 'APPROVED', 'CANCELLED', 'CANCELLING');
 
+CREATE CAST (varchar AS order_status) WITH INOUT AS IMPLICIT;
+
 DROP TABLE IF EXISTS "order".orders CASCADE;
 
 CREATE TABLE "order".orders
