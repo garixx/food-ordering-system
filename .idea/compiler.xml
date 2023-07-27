@@ -33,7 +33,7 @@
       <module name="common-application" options="-parameters" />
       <module name="common-domain" options="-parameters" />
       <module name="customer-service" options="-parameters" />
-      <module name="food-ordering-system" options="-parameters" />
+      <module name="food-ordering-system" options="" />
       <module name="inftrastructure" options="-parameters" />
       <module name="kafka" options="" />
       <module name="kafka-consumer" options="-parameters" />
